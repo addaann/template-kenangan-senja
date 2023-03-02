@@ -1,0 +1,308 @@
+:root {
+    --primary: #bd8214;
+    --bg: #010101;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg);
+    height: 3000px;
+    color: #fff;
+}
+
+.container {
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1.4rem 7%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid #875c0d;
+    position: fixed;
+    z-index: 99999;
+}
+
+.navbar .navbar-logo a {
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #fff;
+}
+
+.navbar .navbar-logo a span {
+    color: var(--primary);
+}
+
+.navbar .navbar-menu a {
+    font-size: 1.3rem;
+    margin: 0 1.2rem;
+    display: inline-block;
+    color: #fff;
+}
+
+.navbar .navbar-menu a::after {
+    content: "";
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+}
+
+.navbar .navbar-menu a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-menu a:hover::after {
+    transform: scaleX(0.7);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-extra a {
+    color: #fff;
+    margin: 0 0.5rem;
+    display: inline-block;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+#navbar-btn-burger {
+    display: none;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url("../img/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    bottom: 0%;
+    background: linear-gradient(
+        0deg,
+        rgba(1, 1, 1, 1) 3%,
+        rgba(255, 255, 255, 0) 60%
+    );
+}
+
+.hero .content {
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+
+.hero .content h1 {
+    font-size: 5rem;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5);
+}
+
+.hero .content h1 span {
+    color: var(--primary);
+}
+
+.hero .content p {
+    font-size: 1.6rem;
+    font-weight: 100;
+    margin-top: 1rem;
+    mix-blend-mode: difference;
+}
+
+.hero .content a.cta {
+    display: inline-block;
+    margin-top: 2rem;
+    color: #fff;
+    padding: 1rem 3rem;
+    background-color: var(--primary);
+    box-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5);
+    border-radius: 0.5rem;
+}
+
+/* ABOUT */
+.about,
+.menu {
+    padding: 8rem 7% 1.3rem;
+}
+
+.about h2,
+.menu h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+}
+
+.about h2 span,
+.menu h2 span {
+    color: var(--primary);
+}
+
+.about .row {
+    display: flex;
+}
+
+.about .row .about-img {
+    flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+    width: 100%;
+}
+
+.about .row .content {
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+}
+
+.about .row .content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about .row .content p {
+    font-weight: 100;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.menu h2 {
+    margin-bottom: 1rem;
+}
+
+.menu .deskripsi-menu {
+    text-align: center;
+    width: 40rem;
+    margin: auto;
+    font-weight: 100;
+    line-height: 1.3;
+}
+
+.menu .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 4rem;
+    column-gap: 2rem;
+}
+
+.menu .row .menu-card {
+    text-align: center;
+    padding-top: 4rem;
+}
+
+.menu .row .menu-card .menu-card-img {
+    border-radius: 50%;
+    width: 20rem;
+}
+
+.menu .row .menu-card .menu-card-title {
+    margin: 1rem auto 0.5rem;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    #navbar-btn-burger {
+        display: inline-block;
+    }
+
+    .navbar .navbar-menu {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 30rem;
+        background-color: #fff;
+        height: 100vh;
+        transition: 0.5s ease-out;
+    }
+
+    .navbar .navbar-menu.active {
+        right: 0%;
+        transition: 0.5s ease-in;
+    }
+
+    .navbar .navbar-menu a {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--bg);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .navbar .navbar-menu a::after {
+        transform-origin: 0 0;
+        transform: scaleX(0);
+    }
+
+    .navbar .navbar-menu a:hover::after {
+        transform: scaleX(0.2);
+        transition: 0.3s linear;
+    }
+
+    .about .row {
+        flex-wrap: wrap;
+    }
+
+    .about .row .about-img img {
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about .row .content {
+        padding: 0;
+    }
+
+    .about .row .content h3 {
+        margin-top: 1rem;
+    }
+
+    .menu p {
+        font-size: 1.3rem;
+        width: 40rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+}
