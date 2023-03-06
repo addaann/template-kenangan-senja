@@ -15,14 +15,14 @@
 body {
     font-family: "Poppins", sans-serif;
     background-color: var(--bg);
-    height: 3000px;
+    height: 5000px;
     color: #fff;
 }
 
 .container {
 }
 
-/* NAVBAR */
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -86,7 +86,7 @@ body {
     display: none;
 }
 
-/* HERO */
+/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -143,21 +143,24 @@ body {
     border-radius: 0.5rem;
 }
 
-/* ABOUT */
+/* About Section */
 .about,
-.menu {
+.menu,
+.contact {
     padding: 8rem 7% 1.3rem;
 }
 
 .about h2,
-.menu h2 {
+.menu h2,
+.contact h2 {
     text-align: center;
     font-size: 2.6rem;
     margin-bottom: 3rem;
 }
 
 .about h2 span,
-.menu h2 span {
+.menu h2 span,
+.contact h2 span {
     color: var(--primary);
 }
 
@@ -189,11 +192,14 @@ body {
     margin-bottom: 0.8rem;
 }
 
-.menu h2 {
+/* Menu Section */
+.menu h2,
+.contact h2 {
     margin-bottom: 1rem;
 }
 
-.menu .deskripsi-menu {
+.menu .description,
+.contact .description {
     text-align: center;
     width: 40rem;
     margin: auto;
@@ -221,6 +227,53 @@ body {
 
 .menu .row .menu-card .menu-card-title {
     margin: 1rem auto 0.5rem;
+}
+
+/* Contact Section */
+.contact .row {
+    display: flex;
+    margin-top: 2rem;
+    background-color: #222;
+}
+
+.contact .row .map {
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contact .row form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form .input-group {
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    margin-top: 1.5rem;
+    background-color: var(--bg);
+    border: 1px solid #eee;
+}
+
+.contact .row form .input-group input {
+    width: 100%;
+    background: none;
+    padding: 1rem;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.contact .row form .btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 400;
+    cursor: pointer;
 }
 
 /* Media Queries */
@@ -297,6 +350,18 @@ body {
     .menu p {
         font-size: 1.3rem;
         width: 40rem;
+    }
+
+    .contact .row {
+        flex-wrap: wrap;
+    }
+
+    .contact .row .map {
+        height: 30rem;
+    }
+
+    .contact .row form {
+        padding-top: 1rem;
     }
 }
 
